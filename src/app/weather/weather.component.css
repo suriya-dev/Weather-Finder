@@ -1,0 +1,20 @@
+.naveBar {
+}
+.searchButton {
+  border: solid 1px rgb(217, 213, 222);
+  height: 39px;
+}
+.box {
+  background-color: #1839f3;
+  border-radius: 5 px;
+  box-shadow: 2px 2px 5px #000;
+  color: #fff;
+  cursor: default;
+  height: 150 px;
+  margin: 5 px;
+  padding: 40px;
+}
+.box:hover {
+  -webkit-transform: scale(1.01);
+  transform: scale(1.01);
+}

@@ -1,0 +1,86 @@
+<div class="jumbotron bg-primary rounded">
+  <div class="container d-flex justify-content-center">
+    <div class="col-md-7 col-lg-4 pt-2 pb-2 text-center">
+      <h1 class="text-white">WEATHER FINDER</h1>
+      <span
+        [ngClass]="!currentSkin ? 'icon-sun' : 'icon-moon'"
+        class="ficon font-medium-5 feather"
+      ></span>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-4 d-flex justify-content-center">
+  <div class="col-md-3 pb-2">
+    <div class="input-group">
+      <input
+        class="form-control"
+        type="text"
+        value="search"
+        [(ngModel)]="textSerch"
+        (change)="textChange()"
+        [ngModelOptions]="{ standalone: true }"
+        placeholder="Search City"
+        id="example-search-input"
+      />
+      <span class="input-group-append">
+        <button class="btn bg-primary searchButton ms-n3" type="button">
+          <i class="fa fa-search"></i>
+        </button>
+      </span>
+    </div>
+  </div>
+</div>
+<br />
+<div class="data container" *ngIf="weatherData && !text">
+  <div class="row aline-items-center d-flex justify-content-center">
+    <div class="col-md-9 card">
+      <div class="card-body text-center">
+        <h2>{{ weatherData?.name }}</h2>
+      </div>
+    </div>
+  </div>
+
+  <div class="row pt-2 d-flex aline-items-center justify-content-center">
+    <div class="col-md-3">
+      <div class="card text-center text-white box rounded bg-primary">
+        <div class="card-body">
+          {{ weatherData?.weather[0].main }}
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card text-center text-white box rounded bg-primary">
+        <div class="card-body">
+          {{ weatherData?.weather[0].main }}
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card text-center text-white box rounded bg-primary">
+        <div class="card-body">
+          {{ weatherData?.weather[0].main }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row pt-4 d-flex aline-items-center justify-content-center">
+    <div class="col-md-4">
+      <div class="card text-center text-white box rounded bg-primary">
+        <div class="card-body">
+          {{ weatherData?.weather[0].main }}
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card text-center text-white box rounded bg-primary">
+        <div class="card-body">
+          {{ weatherData?.weather[0].main }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="conatiner d-flex justify-content-center" *ngIf="text">
+  <h2>No data matche's</h2>
+</div>
